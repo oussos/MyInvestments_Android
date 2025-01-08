@@ -17,6 +17,10 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: Set execute permission for gradlew
+      run: chmod +x ./gradlew
+    - name: Build project
+      run: ./gradlew build
     - name: Build with Gradle
       run: ./gradlew build
     - name: Upload APK
